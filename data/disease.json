@@ -1,0 +1,63 @@
+[
+    {
+      "name": "Flu Burung",
+      "level": 1,
+      "description": "Flu Burung, juga dikenal sebagai influenza avian, adalah penyakit menular yang disebabkan oleh virus influenza dari burung. Gejalanya mirip dengan flu biasa, termasuk demam, batuk, pilek, dan kelelahan.",
+      "treatment": "Istirahat, minum banyak cairan, dan dalam beberapa kasus, antiviral."
+    },
+    {
+      "name": "Hipertensi",
+      "level": 2,
+      "description": "Hipertensi, atau tekanan darah tinggi, adalah kondisi medis kronis di mana tekanan darah dalam arteri secara konsisten tinggi. Ini dapat menyebabkan penyakit jantung, stroke, dan komplikasi lainnya.",
+      "treatment": "Perubahan gaya hidup, pengobatan, dan modifikasi diet."
+    },
+    {
+      "name": "Diabetes",
+      "level": 3,
+      "description": "Diabetes adalah gangguan metabolisme kronis yang ditandai oleh kadar gula darah tinggi. Ini dapat menyebabkan berbagai komplikasi yang memengaruhi jantung, pembuluh darah, mata, dan saraf.",
+      "treatment": "Insulin atau obat oral, manajemen diet, dan olahraga teratur."
+    },
+    {
+      "name": "Asma",
+      "level": 4,
+      "description": "Asma adalah kondisi pernapasan kronis yang menyebabkan peradangan dan penyempitan saluran udara, yang mengakibatkan gejala seperti mengi, sesak napas, dan batuk.",
+      "treatment": "Bronkodilator, kortikosteroid hirup, dan menghindari pemicu."
+    },
+    {
+      "name": "Artritis",
+      "level": 5,
+      "description": "Artritis adalah sekelompok gangguan sendi yang ditandai oleh peradangan, nyeri, dan kekakuan. Jenis yang paling umum adalah osteoartritis dan rematoid artritis.",
+      "treatment": "Obat-obatan, terapi fisik, dan perubahan gaya hidup."
+    },
+    {
+      "name": "Migrain",
+      "level": 6,
+      "description": "Migrain adalah gangguan neurologis yang menyebabkan sakit kepala parah sering disertai mual, muntah, dan sensitivitas terhadap cahaya dan suara.",
+      "treatment": "Obat penghilang rasa sakit, tindakan pencegahan, dan penyesuaian gaya hidup."
+    },
+    {
+      "name": "Osteoporosis",
+      "level": 7,
+      "description": "Osteoporosis adalah kondisi yang ditandai oleh tulang yang melemah dan lebih rentan terhadap patah tulang. Ini umum terjadi pada orang tua, terutama pada wanita pascamenopause.",
+      "treatment": "Obat untuk memperkuat tulang, suplemen kalsium dan vitamin D, serta latihan yang melibatkan beban."
+    },
+    {
+      "name": "Flu Biasa",
+      "level": 8,
+      "description": "Flu Biasa adalah infeksi virus yang memengaruhi hidung dan tenggorokan, menyebabkan gejala seperti bersin, batuk, pilek, dan sakit tenggorokan.",
+      "treatment": "Istirahat, minum banyak cairan, dan obat flu bebas resep."
+    },
+    {
+      "name": "GERD (Gastroesophageal Reflux Disease)",
+      "level": 9,
+      "description": "GERD adalah gangguan pencernaan kronis di mana asam lambung naik kembali ke kerongkongan, menyebabkan gejala seperti heartburn, regurgitasi, dan nyeri dada.",
+      "treatment": "Perubahan gaya hidup, obat-obatan, dan dalam kasus yang parah, pembedahan."
+    },
+    {
+      "name": "Bronkitis",
+      "level": 10,
+      "description": "Bronkitis adalah peradangan saluran bronkial, sering disebabkan oleh virus atau bakteri. Ini menyebabkan gejala seperti batuk, produksi lendir, dan ketidaknyamanan di dada.",
+      "treatment": "Istirahat, hidrasi, dan kadang-kadang, antibiotik untuk bronkitis bakteri."
+    }
+  ]
+  

@@ -1,0 +1,73 @@
+[
+    {
+      "name": "John Doe",
+      "address": "123 Main Street",
+      "age": 35,
+      "dateOfBirth": "1988-05-15",
+      "UserId": 2
+    },
+    {
+      "name": "Jane Smith",
+      "address": "456 Elm Avenue",
+      "age": 42,
+      "dateOfBirth": "1980-09-10",
+      "UserId": 2
+    },
+    {
+      "name": "Michael Johnson",
+      "address": "789 Oak Road",
+      "age": 28,
+      "dateOfBirth": "1995-12-03",
+      "UserId": 2
+    },
+    {
+      "name": "Emily Davis",
+      "address": "1011 Pine Lane",
+      "age": 65,
+      "dateOfBirth": "1958-08-20",
+      "UserId": 2
+    },
+    {
+      "name": "Robert Wilson",
+      "address": "1213 Birch Street",
+      "age": 30,
+      "dateOfBirth": "1992-04-17",
+      "UserId": 2
+    },
+    {
+      "name": "Lisa Lee",
+      "address": "1415 Maple Court",
+      "age": 70,
+      "dateOfBirth": "1953-11-25",
+      "UserId": 1
+    },
+    {
+      "name": "William Brown",
+      "address": "1617 Cedar Drive",
+      "age": 25,
+      "dateOfBirth": "1998-07-12",
+      "UserId": 1
+    },
+    {
+      "name": "Sarah White",
+      "address": "1819 Redwood Lane",
+      "age": 45,
+      "dateOfBirth": "1977-03-05",
+      "UserId": 1
+    },
+    {
+      "name": "James Anderson",
+      "address": "2021 Sequoia Street",
+      "age": 38,
+      "dateOfBirth": "1985-10-30",
+      "UserId": 1
+    },
+    {
+      "name": "Olivia Harris",
+      "address": "2223 Cedar Avenue",
+      "age": 29,
+      "dateOfBirth": "1994-02-22",
+      "UserId": 1
+    }
+  ]
+  
