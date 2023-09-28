@@ -15,6 +15,15 @@ module.exports = (sequelize, DataTypes) => {
       Disease.belongsToMany(models.Patient, {through: models.PatientDisease})
 
     }
+    generateLevel(){
+      if(this.level <= 4){
+        return "Aman"
+      }else if(this.level < 7 && this.level > 4){
+        return "Perlu Bed Rest"
+      }else{
+        return "Rujuk Rumah Sakit"
+      }
+    }
   }
   Disease.init({
     name: DataTypes.STRING,

@@ -1,5 +1,5 @@
-const {Disease, Patient, Profile, User, PatientDisease} = require('../models')
-const bcryptjs = require('bcryptjs')
+const {Profile, User} = require('../models')
+const bcrypt = require('bcryptjs')
 class UserController {
     static register(req,res){
         res.render('register-form')
@@ -13,46 +13,51 @@ class UserController {
         .catch(err=>{res.send(err)})
     }
     static login(req,res){
-        res.render('login')
+        const error = req.query.err
+        res.render('login',{error})
     }
     static loginPost(req,res){
         const {email, password}= req.body
         User.findOne({
-            where: email
+            where: {email}
         })
         .then((user)=>{
             if(user){
-                const validPassword = bcryptjs.compareSync(password, user.password)
-                if(validPassword){
-                    return res.redirect('/')
+                const validPassword = bcrypt.compareSync(password, user.password)
+                if(validPassword == true){
+                    req.session.UserId = user.id
+                    let UserId = user.id
+                    Profile.findOne({
+                        where: {
+                            UserId
+                        }
+                    })
+                    .then((data)=>{
+                        console.log(data)
+                        res.redirect('/')
+                    })
+                    .catch(()=>{res.redirect('profiles/add')})
+                     
                 }else{
                     const error = 'invalid password'
-                    return res.send(error)
+                    return res.redirect(`/login?err=${error}`)
                 }
             }else{
                 const error = 'invalid email'
-                return res.send(error)
+                return res.redirect(`/login?err=${error}`)
             }
         })
         .catch(err=>res.send(err))
     }
 
-    static profile(req,res){
-        Profile.findAll({where : {id : 1}})
-        .then((data)=>{
-            console.log(data)
-            res.render('profile',{data})
+    static logout(req,res){
+        req.session.destroy(function(err) {
+            if (err){
+                res.send(err)
+            }else{
+                res.redirect('/login')
+            }
         })
-        .catch(err=>{res.send(err)})
-    }
-    static addProfile(req,res){
-        res.render('addProfile')
-    }
-    static addPro(req,res){
-        const {name, address, gender, dateOfBirth, UserId} = req.body
-        Profile.create({name,address, gender, dateOfBirth, UserId})
-        .then(()=>{res.redirect('/')})
-        .catch(err=>{res.send(err)})
     }
 }
 module.exports = UserController

@@ -17,30 +17,26 @@
     <h1 style="text-align: center;">Add Profile</h1>
   </div>
     <div class="col-md-7 col-lg-8" style="margin-left: 250px;">
-        <form class="needs-validation" action="/profiles/add" method="post">
+        <form class="needs-validation" action="/profiles/edit/<%= data.id %>" method="post">
           <div class="row g-3">
             <div class="col-12">
               <label for="email" class="form-label">Name</label>
-              <input type="text" name="name" class="form-control">
+              <input type="text" name="name" class="form-control" value="<%= data.name %>">
             </div>
             <div class="col-12">
                 <label for="email" class="form-label">Address</label>
-                <input type="text" name="address" name="title" class="form-control">
+                <input type="text" name="address" name="title" class="form-control" value="<%= data.address %>">
             </div>
 
             <div class="col-12">
               <label for="address2" class="form-label">Gender</label>
-              <input type="text" name="gender" class="form-control">
+              <input type="text" name="gender" class="form-control" value="<%= data.gender %>">
             </div>
              
             <div class="col-12" style="margin-top: 3 rem;">
                 <label for="address2" class="form-label">Date Of Birth</label>
-                <input type="date" name="dateOfBirth" class="form-control">
+                <input type="date" name="dateOfBirth" class="form-control" value="<%= data.dateFormat %>">
             </div>
-            <div class="col-12">
-              <label class="form-label">User</label>
-              <input type="number" name="UserId" class="form-control" value="1">
-          </div>
             <button class="w-100 btn btn-primary btn-lg" type="submit" style="margin-top: 2rem;">Submit</button>
         </form>
     </div>

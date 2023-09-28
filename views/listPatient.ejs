@@ -8,16 +8,20 @@
 <body>
     <header class="d-flex justify-content-center py-3">
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+            <button type="button" class="btn btn-warning" onclick="window.location.href='/logout'">Logout</button>
+          </li>
         </ul>
       </header>
       <h1 style="text-align: center;margin: 2rem;">List Patients</h1>
       <div style="display: flex;justify-content: center;margin: 5px;">
-        <button type="button" class="btn btn-warning" onclick="window.location.href='/patients/'">Click Here to Add Patient</button>
+        <button type="button" class="btn btn-warning" onclick="window.location.href='/patients/add'">Click Here to Add Patient</button>
+      </div>
+      <div class="d-flex align-items-center">
+        <form class="w-100 me-3" role="search" style="display: flex;" action="/patients">
+          <input type="search" name="search" class="form-control" placeholder="Search by title" style="margin-right: 10px;">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
       </div>
       <div style="display: flex;justify-content: center;">
           <table class="table table-dark table-striped" style="max-width:80rem;">
@@ -33,17 +37,18 @@
                 </tr>
               </thead>
               <tbody>
-                <% data.forEach(el => { %>
+                <% data.forEach((el,i) => { %>
                     <tr>
-                        <th scope="row"><%= 1 %></th>
+                        <th scope="row"><%= i+1 %></th>
                         <td><%= el.name %></td>
                         <td><%= el.address %></td>
                         <td><%= el.age %></td>
                         <td><%= el.Diseases.length == 0 ? '--' : el.Diseases[0].name %></td>
-                        <td><%= el.Diseases.length == 0 ? '--' : el.Diseases[0].level %></td>
+                        <td><%= el.Diseases.length == 0 ? '--' : el.Diseases[0].generateLevel() %></td>
                         <td>
-                            <button type="button" class="btn btn-success" onclick="window.location.href='/patients/'">Edit</button>
-                            <button type="button" class="btn btn-danger" onclick="window.location.href='/patients/'">Delete</button>
+                            <button type="button" class="btn btn-success" onclick="window.location.href='/patients/edit/<%= el.id %>'">Edit</button>
+                            <button type="button" class="btn btn-danger" onclick="window.location.href='/patients/delete/<%= el.id %>'">Delete</button>
+                            <button type="button" class="btn btn-warning" onclick="window.location.href='/invoice/<%= el.id %>'">Print</button>
                         </td>
                       </tr>
                 <% }) %>
