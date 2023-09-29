@@ -2,7 +2,8 @@ const {Profile, User} = require('../models')
 const bcrypt = require('bcryptjs')
 class UserController {
     static register(req,res){
-        res.render('register-form')
+        const error = req.query.err
+        res.render('register-form',{error})
     }
     static registerPost(req,res){
         const {email, password, role} = req.body
@@ -10,7 +11,14 @@ class UserController {
         .then(()=>{
             res.redirect('/login')
         })
-        .catch(err=>{res.send(err)})
+        .catch(err=>{
+            if(err.name === "SequelizeUniqueConstraintError"){
+                const eroors = err.errors[0].message
+                res.redirect(`/register?err=${eroors}`)
+            }else{
+                res.send(err)
+            }
+        })
     }
     static login(req,res){
         const error = req.query.err
@@ -27,16 +35,12 @@ class UserController {
                 if(validPassword == true){
                     req.session.UserId = user.id
                     let UserId = user.id
-                    Profile.findOne({
-                        where: {
-                            UserId
-                        }
-                    })
+                    Profile.findOne({where : {UserId}})
                     .then((data)=>{
                         console.log(data)
                         res.redirect('/')
                     })
-                    .catch(()=>{res.redirect('profiles/add')})
+                    .catch((err)=>{res.redirect('/profiles/add')})
                      
                 }else{
                     const error = 'invalid password'

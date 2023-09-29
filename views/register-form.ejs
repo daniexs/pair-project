@@ -8,6 +8,11 @@
 </head>
 <body>
   <h1 style="text-align: center;">Register</h1>
+  <div style="display: flex;justify-content: center;">
+    <% if(error){ %>
+      <p style="color: red;"><%= error %></p>
+    <% } %>
+  </div>
   <div style="display: flex;justify-content: center; margin: 10rem;">
     <form action="/register" method="post" style="width: 20rem;">
         <!-- Email input -->

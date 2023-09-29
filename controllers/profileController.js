@@ -4,7 +4,12 @@ class profileController{
         const UserId = req.session.UserId
         Profile.findAll({where : {UserId}})
         .then((data)=>{
-            res.render('profile',{data})
+            console.log(data)
+            if(data.length == 0){
+                res.redirect('/profiles/add')
+            }else{
+                res.render('profile',{data})
+            }
         })
         .catch(err=>{res.send(err)})
     }

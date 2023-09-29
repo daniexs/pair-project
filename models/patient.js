@@ -75,6 +75,7 @@ module.exports = (sequelize, DataTypes) => {
                 (today.getMonth() < patient.dateOfBirth.getMonth() || 
                 (today.getMonth() === patient.dateOfBirth.getMonth() && today.getDate() < patient.dateOfBirth.getDate()));
     patient.age = age
+    return patient
 })
   return Patient;
 };

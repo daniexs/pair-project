@@ -1,10 +1,6 @@
 const express = require('express')
 const router = express.Router()
 
-const userRouter = require('./user-router')
-const patientRouter = require('./patient-router')
-const diseaseRouter = require('./disease-router')
-
 const usersController = require('../controllers/usersController')
 const patientsController = require('../controllers/patientsController')
 const profileController = require('../controllers/profileController')

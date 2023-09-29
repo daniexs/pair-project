@@ -7,11 +7,12 @@ class Controller {
         res.render('home')
     }
     static patientList(req,res){
+        let UserId= req.session.UserId
         const {search} = req.query
         console.log(search)
         let option = {
             include: Disease,
-            where: {}
+            where: {UserId}
         }
         if(search){
             option.where.name = {
